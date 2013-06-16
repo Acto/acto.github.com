@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Acto Dev-log]]></title>
-  <link href="http://Acto.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: ruby | Acto Dev-log]]></title>
+  <link href="http://Acto.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://Acto.github.io/"/>
   <updated>2013-06-16T21:57:41+09:00</updated>
   <id>http://Acto.github.io/</id>
@@ -21,25 +21,19 @@
     <content type="html"><![CDATA[<p>GitHub Pagesへの初投稿
 まだまだ、改善の余地あり</p>
 
-<p>RVMでRuby 2.0.0のインストールを行った。</p>
-
-<figure class='code'><figcaption><span>Here&#8217;s an example .rvmrc file. </span></figcaption>
+<p>RVMでRuby 2.0.0のインストールを行った。
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Here&rsquo;s an example .rvmrc file. </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">rvm</span> <span class="n">get</span> <span class="n">head</span>
 </span><span class='line'><span class="n">rvm</span> <span class="n">install</span> <span class="mi">2</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-
-<p>ついでに、1.9.3のRubyもアップデートした。</p>
-
-<figure class='code'><figcaption><span>Here&#8217;s an example .rvmrc file. </span></figcaption>
+<p>ついでに、1.9.3のRubyもアップデートした。
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Here&rsquo;s an example .rvmrc file. </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">rvm</span> <span class="n">upgrade</span> <span class="n">ruby</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">9</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="n">p327</span> <span class="n">ruby</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">9</span><span class="o">.</span><span class="mi">3</span><span class="o">-</span><span class="n">p429</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   
