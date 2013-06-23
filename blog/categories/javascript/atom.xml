@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Ruby | Acto Dev-log]]></title>
-  <link href="http://Acto.github.io/blog/categories/ruby/atom.xml" rel="self"/>
+  <title><![CDATA[Category: JavaScript | Acto Dev-log]]></title>
+  <link href="http://Acto.github.io/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://Acto.github.io/"/>
   <updated>2013-06-19T14:53:58+09:00</updated>
   <id>http://Acto.github.io/</id>

@@ -4,7 +4,7 @@
   <title><![CDATA[Acto Dev-log]]></title>
   <link href="http://Acto.github.io/atom.xml" rel="self"/>
   <link href="http://Acto.github.io/"/>
-  <updated>2013-06-16T22:08:51+09:00</updated>
+  <updated>2013-06-19T14:53:58+09:00</updated>
   <id>http://Acto.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[JSでのWEBアプリケーション構築]]></title>
+    <link href="http://Acto.github.io/blog/2013/06/19/jsban-kbmap-editorzuo-ri/"/>
+    <updated>2013-06-19T14:19:00+09:00</updated>
+    <id>http://Acto.github.io/blog/2013/06/19/jsban-kbmap-editorzuo-ri</id>
+    <content type="html"><![CDATA[<p><a href="http://d.hatena.ne.jp/pbgreen/20120219/1329669610">クロスドメインでのJS&lt;&ndash;>Railsサーバ通信</a></p>
+
+<p>サーバ側をこれにして、</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;json&#39;</span>
+</span><span class='line'><span class="vi">@entry</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:id</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:kit_id</span><span class="o">]</span><span class="p">,</span> <span class="ss">:title</span> <span class="o">=&gt;</span> <span class="s2">&quot;entry</span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:kit_id</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="ss">:content</span> <span class="o">=&gt;</span> <span class="s2">&quot;This is content #</span><span class="si">#{</span><span class="n">params</span><span class="o">[</span><span class="ss">:kit_id</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+</span><span class='line'><span class="n">render</span> <span class="ss">:json</span> <span class="o">=&gt;</span> <span class="no">JSON</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="vi">@entry</span><span class="p">),</span> <span class="ss">:callback</span> <span class="o">=&gt;</span> <span class="n">params</span><span class="o">[</span><span class="ss">:callback</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>JS側のajax通信をこれにしたらできた。</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+</span><span class='line'>  <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;http://localhost:3002/connection/ajax_test?kit_id=1&#39;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">dataType</span><span class="o">:</span> <span class="s1">&#39;jsonp&#39;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">status</span><span class="p">,</span> <span class="nx">xhr</span><span class="p">){</span>
+</span><span class='line'>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[ruby 2.0.0 installation by rvm]]></title>
