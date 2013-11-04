@@ -4,7 +4,7 @@
   <title><![CDATA[Acto Dev-log]]></title>
   <link href="http://Acto.github.io/atom.xml" rel="self"/>
   <link href="http://Acto.github.io/"/>
-  <updated>2013-06-23T17:24:04+09:00</updated>
+  <updated>2013-11-04T16:43:25+09:00</updated>
   <id>http://Acto.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[bundle clean でのエラー]]></title>
+    <link href="http://Acto.github.io/blog/2013/11/04/bundle-clean-error/"/>
+    <updated>2013-11-04T16:30:00+09:00</updated>
+    <id>http://Acto.github.io/blog/2013/11/04/bundle-clean-error</id>
+    <content type="html"><![CDATA[<p>bundleのgemのバージョンを戻す時に</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ bundle clean --force</span></code></pre></td></tr></table></div></figure>
+
+
+<p>とやると、rvmのバグか他の必要なgem（rails等）の関連がおかしくなる。
+↓こんな感じ</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ bundle update
+</span><span class='line'>env: ruby_executable_hooks: No such file or directory
+</span><span class='line'>$ bundle install
+</span><span class='line'>env: ruby_executable_hooks: No such file or directory
+</span><span class='line'>$ rails -v
+</span><span class='line'>env: ruby_executable_hooks: No such file or directory</span></code></pre></td></tr></table></div></figure>
+
+
+<p>この<a href="http://pastebin.com/9sqFwhCE">ページ</a>を参考に補修。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rvm @global do gem regenerate_binstubs
+</span><span class='line'>$ gem regenerate_binstubs</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[JSでのWEBアプリケーション構築]]></title>

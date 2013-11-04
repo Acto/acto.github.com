@@ -9,11 +9,16 @@
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content="クロスドメインでのJS&lt;&ndash;>Railsサーバ通信 サーバ側をこれにして、 1
+  <meta name="description" content="bundleのgemのバージョンを戻す時に 1
+$ bundle clean --force とやると、rvmのバグか他の必要なgem（rails等）の関連がおかしくなる。
+↓こんな感じ 1
 2
 3
-require &#39;json&#39;
-@entry = {:id =&gt; params[:kit_id], :title =&gt; &quot;entry#{params[: &hellip;">
+4
+5
+6
+$ bundle update
+env: ruby_executable_hooks &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +73,73 @@ require &#39;json&#39;
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/11/04/bundle-clean-error/">Bundle Clean でのエラー</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-04T16:30:00+09:00" pubdate data-updated="true">Nov 4<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>bundleのgemのバージョンを戻す時に</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ bundle clean --force</span></code></pre></td></tr></table></div></figure>
+
+
+<p>とやると、rvmのバグか他の必要なgem（rails等）の関連がおかしくなる。
+↓こんな感じ</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ bundle update
+</span><span class='line'>env: ruby_executable_hooks: No such file or directory
+</span><span class='line'>$ bundle install
+</span><span class='line'>env: ruby_executable_hooks: No such file or directory
+</span><span class='line'>$ rails -v
+</span><span class='line'>env: ruby_executable_hooks: No such file or directory</span></code></pre></td></tr></table></div></figure>
+
+
+<p>この<a href="http://pastebin.com/9sqFwhCE">ページ</a>を参考に補修。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rvm @global do gem regenerate_binstubs
+</span><span class='line'>$ gem regenerate_binstubs</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -207,6 +279,10 @@ require &#39;json&#39;
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/11/04/bundle-clean-error/">bundle clean でのエラー</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/06/19/jsban-kbmap-editorzuo-ri/">JSでのWEBアプリケーション構築</a>
